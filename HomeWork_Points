@@ -1,4 +1,6 @@
 
+var random = Math.random;
+
 /* POINT */
 
 var Point = function (x, y) {
@@ -72,14 +74,12 @@ var Line = function (a, b, c){
 /* TRIANGLE */
 
 var Triangle = function (p1, p2, p3) {
-  this.p1 = p1;
-  this.p2 = p2;
-  this.p3 = p3;
-
+  this.points = [p1, p2, p3];
+  
   this.l1 = p2.getDistance(p3);
   this.l2 = p3.getDistance(p1);
   this.l3 = p1.getDistance(p2);
-}
+};
 
 Triangle.prototype.getPerimeter = function() {
   return this.l1 + this.l2 + this.l3;
@@ -131,7 +131,7 @@ else
 
 Triangle.prototype.below = function(line){
 
-var check = this.p1.membership(line) + this.p2.membership(line) + this.p3.membership(line);
+var check = this.points[0].membership(line) + this.points[1].membership(line) + this.points[2].membership(line);
 
 if (check === -3)
   return true;
