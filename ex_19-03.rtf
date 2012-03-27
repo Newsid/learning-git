@@ -1,0 +1,66 @@
+function apply(param){
+  return param[0](param[1]);
+}
+
+
+//aa(function (x) {return x*2;})(1,3,5,7,9);
+
+
+function aa(fun){
+  return function(array){
+    return array.map(fun);
+  }
+}
+
+
+function comp2(param){
+  return function(x){
+    return param[0](param[1](x));
+  }
+}
+
+
+
+//comp2
+function comp (arr){
+  return arr.reduce(function(f,g){
+    return function(x){
+      return f(g(x));
+    };
+  });
+};
+
+
+function cons(arr){
+
+  return function (x){
+    return arr.map(function (item)){
+
+      return item(x);
+    })
+
+};
+
+//distl(['a',[0,1,2,3,4]]); // [['a',0],['a',1]......]
+
+function distl(param){
+  var left = param[0];
+  var dist = param[1];
+
+  return dist.map(function(item){
+    return [left,item];
+});
+
+}
+
+//risultato lineare
+JSON.stringify(distl(['a',[0,1,2,3,4]]));
+"[["a",0],["a",1],["a",2],["a",3],["a",4]]"
+
+
+
+function trans(param);
+
+
+
+
