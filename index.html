@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Representation of Skeletal Chest by Newsid</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Representation of Skeletal Chest</h1>
+        <p></p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/Newsid/learning-git" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/Newsid/learning-git/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/Newsid/learning-git/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h3>Introduction</h3>
+
+<p>In this project, I will represent all the Skeletal System of the Thorax.
+The Skeletal System of the Thorax is composed by the thoracic vertebrae (12 vertebrae), the ribcage (12 couple of ribs), the sternum and the manubrium.</p>
+
+<p><strong>Note:</strong>
+Being this a specular design, for each object was designed only the left side, and then copied using the S Transfrorm with parameter "-1"</p>
+
+<p><strong>Note 2:</strong>
+In the beginning I tried using solids, but given the excessive load time, I opted for using surfaces.</p>
+
+<p><strong>Note 3:</strong>
+Since I had no real measures, all proportions were calculated by eye.</p>
+
+<h3>Main Structure of a Vertebra</h3>
+
+<p><img src="http://img189.imageshack.us/img189/300/strutturavertebra.png" alt="Structure of a Vertebra"></p>
+
+<p>To create the main structure of a vertebra, I created two bases (upper and lower) and I joined via BEZIER(S1), using intermediate curves for the recess.</p>
+
+<h3>Back of a Vertebra</h3>
+
+<p><img src="http://img521.imageshack.us/img521/2252/retrovertebra.png" alt="Back of a Vertebra"></p>
+
+<p>To create the back structure of a Vertebra, I created a series of NUBS starting from the center.
+The NUBS represent the contours of the structure and were combined by using BEZIER(S1).
+Ends were created separately using BEZIER.</p>
+
+<h3>A Vertebra</h3>
+
+<p>Now we can see the entire vertebra, following the combination of the main structure and the back structure.</p>
+
+<p><img src="http://img844.imageshack.us/img844/3155/vertebra.png" alt="Vertebra"></p>
+
+<h3>Ribs</h3>
+
+<p>For each Rib I used series of NUBS joined by BEZIER, starting from the same point of the corresponding vertebra.
+Each rib has obviously a different curvature and end point.</p>
+
+<p>In this image We can see the 10° vertebra and the 10° left and right ribs.</p>
+
+<p><img src="http://img802.imageshack.us/img802/6526/vertebracostole.png" alt="Vertebra and Ribs"></p>
+
+<h3>Sternum and Manubrium</h3>
+
+<p>Sternum and Manubrium are the two bones on the front of the chest.</p>
+
+<p>I used these bones as a reference for the curvature of the ribs, lacking the real measurements and proportions.</p>
+
+<p>As for the previous, I used series of NUBS for the curves and BEZIER to generate the surface.</p>
+
+<p><img src="http://img705.imageshack.us/img705/2357/sternomanubrio.png" alt="Sternum and Manubrium"></p>
+
+<h3>Thorax</h3>
+
+<p>Here we see the final design, obtained by the union of all individual objects.</p>
+
+<p><img src="http://img713.imageshack.us/img713/300/torace.png" alt="Thorax (complete project)"></p>
+
+<h3>Reference Material</h3>
+
+<p><strong>3d reproduction of the human body:</strong> <a href="https://www.biodigitalhuman.com/">https://www.biodigitalhuman.com/</a>
+<img src="http://img703.imageshack.us/img703/2787/biodigitalhuman.png" alt="Bio Digital Human"></p>
+
+<p><strong>3d reproduction of the human body:</strong> <a href="http://www.zygotebody.com/">http://www.zygotebody.com/</a>
+<img src="http://img513.imageshack.us/img513/9887/zygotebody.png" alt="Zygote Body"></p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/Newsid">Newsid</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
